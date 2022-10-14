@@ -1,52 +1,23 @@
-const theNumber = 7;
-const higher = "Högre!"
-const lower = "Lägre!"
-let count = 5;
+// Lägger till event-listener på knappen med ID: btn
+document.getElementById("btn").addEventListener("click", play);
 
-
-
-while (count !==0) {
-let myGuess = prompt("Guess the number!")
-if (myGuess == theNumber) {
-  document.getElementById("prompt").innerHTML = "Du fucking vann bror!";
-  break;
-}
-  if (myGuess < theNumber) {
-    document.getElementById("prompt").innerHTML = higher;
-    count--;
+//funktion för att skriva ut resultatet.
+function play() {
+  //Sparar användarens siffra(som är en string) i en variabel
+  let userInput = document.getElementById("playerInput");
+  //Omvandlar stringen till en siffra
+  let userNumber = parseInt(userInput.value);
+  //OM siffran är under 50 - skriv ut ny text i paragraf-taggen med ID: prompt.
+  if (userNumber < 50) {
+    document.getElementById("prompt").innerHTML = " Det var ett lågt nummer!";
   }
-  if (myGuess > theNumber) {
-    document.getElementById("prompt").innerHTML = lower;
-    count--;
-  } 
+  //OM siffran är över 50 - skriv ut text i paragraf-taggen med ID: prompt.
+  if (userNumber > 50) {
+    document.getElementById("prompt").innerHTML = " Det var ett högt nummer!";
+  }
+    //OM siffran är exakt 50 - skriv ut text i paragraf-taggen med ID: prompt.
+  if (userNumber === 50) {
+    document.getElementById("prompt").innerHTML = " Det var ett lagom stort nummer!";
+  }
 
 }
-
-
-
-
-
-
-/* function play() {
-
-
- console.log(myGuess.value);
- 
-  if (theNumber == myGuess.value) {
-
-    document.getElementById("prompt").innerHTML = "Du fucking vann bror!";
-  }
-  else {
-    if (myGuess.value < theNumber) {
-      document.getElementById("prompt").innerHTML = higher;
-    }
-    if (myGuess.value > theNumber) {
-      document.getElementById("prompt").innerHTML = lower;
-    }
-  } 
-} */
-
-
-
-
-
